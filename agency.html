@@ -41,17 +41,17 @@
       /* Remove border from images */
       img {
         border: none !important;
+        max-width: 100%; /* Ensure images are responsive */
+        height: auto;
       }
       /* Reduce font size for specific list */
       .reduced-font-menu {
         font-size: 15px; /* Adjust the font size as needed */
         font-family: 'Titillium Web', sans-serif;
       }
-
       h1, h2, h3, h4, h5, h6 {
         font-family: 'Titillium Web', sans-serif;
       }
-
       .xmenu a {
         color: maroon;
         padding: 10px 15px;
@@ -66,71 +66,47 @@
       .xmenu a span {
         font-family: 'Titillium Web', sans-serif;
       }
-
       .xmenu {
         list-style-type: none;
         padding: 0;
         margin: 0;
       }
-
-
+      .background-row1, .background-row2, .background-row3, .background-row4 {
+        background-size: cover;      /* Ensures the image covers the entire row */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat;/* Prevents the image from repeating */
+        width: 100%;
+        height: 30%; /* Match the container height */
+        padding: 50px 0;             /* Adds padding to the row for content spacing */
+        color: white;                /* Ensures the text is visible on dark backgrounds */
+      }
       .background-row1 {
-      background-image: url('https://www.oracle.com/a/ocom/img/rh03-c-and-e-overview.jpg');
-      background-size: cover;      /* Ensures the image covers the entire row */
-      background-position: center; /* Centers the image */
-      background-repeat: no-repeat;/* Prevents the image from repeating */
-      width: 100%;
-      height: 30%; /* Match the container height */
-      padding: 50px 0;             /* Adds padding to the row for content spacing */
-      color: white;                /* Ensures the text is visible on dark backgrounds */
-    }
-
-
-    .background-row2 {
-      background-image: url('    https://www.oracle.com/a/ocom/img/rh03v4full-oil-gas-hero.jpg');
-      background-size: cover;      /* Ensures the image covers the entire row */
-      background-position: center; /* Centers the image */
-      background-repeat: no-repeat;/* Prevents the image from repeating */
-      width: 100%;
-      height: 30%; /* Match the container height */
-      padding: 50px 0;             /* Adds padding to the row for content spacing */
-      color: white;                /* Ensures the text is visible on dark backgrounds */
-    }
-
-
-    .background-row3 {
-      background-image: url('    https://www.oracle.com/a/ocom/img/rh03v4full-comm-hero.jpg');
-      background-size: cover;      /* Ensures the image covers the entire row */
-      background-position: center; /* Centers the image */
-      background-repeat: no-repeat;/* Prevents the image from repeating */
-      width: 100%;
-      height: 30%; /* Match the container height */
-      padding: 50px 0;             /* Adds padding to the row for content spacing */
-      color: white;                /* Ensures the text is visible on dark backgrounds */
-    }
-
-
-    .background-row4 {
-      background-image: url('./industries/logistics.jpg');
-      background-size: cover;      /* Ensures the image covers the entire row */
-      background-position: center; /* Centers the image */
-      background-repeat: no-repeat;/* Prevents the image from repeating */
-      width: 100%;
-      height: 30%; /* Match the container height */
-      padding: 50px 0;             /* Adds padding to the row for content spacing */
-      color: white;                /* Ensures the text is visible on dark backgrounds */
-    }
-
- 
-
-
-
+        background-image: url('https://www.oracle.com/a/ocom/img/rh03-c-and-e-overview.jpg');
+      }
+      .background-row2 {
+        background-image: url('https://www.oracle.com/a/ocom/img/rh03v4full-oil-gas-hero.jpg');
+      }
+      .background-row3 {
+        background-image: url('https://www.oracle.com/a/ocom/img/rh03v4full-comm-hero.jpg');
+      }
+      .background-row4 {
+        background-image: url('./industries/logistics.jpg');
+      }
+      @media (max-width: 767px) {
+        .background-row1, .background-row2, .background-row3, .background-row4 {
+          height: auto; /* Allow height to adjust based on content */
+          padding: 20px 0; /* Adjust padding for smaller screens */
+        }
+        .tiny-menu .menu {
+          flex-direction: column; /* Stack menu items vertically */
+        }
+        .tiny-menu .menu li {
+          margin: 5px 0; /* Adjust margin between menu items */
+        }
+      }
     </style>
   </head>
   <body>
-
-
-     
     <!-- Start Top Bar -->
     <div class="top-bar tiny-menu">
       <div class="top-bar-center">
@@ -142,12 +118,10 @@
           <li><a href="#">Contact</a></li>
           <li><a href="#">Companies</a></li>
           <li><a href="#">Career</a></li>
-        
         </ul>
       </div>
     </div>
     <!-- End Top Bar -->
-
     <!-- Start Regions Menu -->
     <div class="top-bar tiny-menu" style="background-color: white;">
       <div class="top-bar-center">
@@ -161,48 +135,30 @@
       </div>
     </div>
     <!-- End Regions Menu -->
-
-
-
-
-
-
-    <div class="grid-container background-row1 full-width" >
+    <div class="grid-container background-row1 full-width">
       <div class="small-12 columns content-container">
-        <h1> <b>Construction</b>     </h1>
+        <h1><b>Construction</b></h1>
         <p>Explore our new features and find the best solutions for your business needs.</p>
       </div>
     </div>
-
-
-    
-    <div class="grid-container background-row2 full-width" >
+    <div class="grid-container background-row2 full-width">
       <div class="small-12 columns content-container">
-        <h1 style="color: black;"><b>Petroluem and Lubricants</b>  </h1>
+        <h1 style="color: black;"><b>Petroluem and Lubricants</b></h1>
         <p>Explore our new features and find the best solutions for your business needs.</p>
       </div>
     </div>
-    
-    <div class="grid-container background-row3 full-width" >
+    <div class="grid-container background-row3 full-width">
       <div class="small-12 columns content-container">
-        <h1><b>Telecom Infrastructure </b></h1>
+        <h1><b>Telecom Infrastructure</b></h1>
         <p>Explore our new features and find the best solutions for your business needs.</p>
       </div>
     </div>
-    
-    <div class="grid-container background-row4 full-width" >
+    <div class="grid-container background-row4 full-width">
       <div class="small-12 columns content-container">
-        <h1 style="color: rgb(0, 255, 42);"><b>Global Logistics</b>  </h1>
+        <h1 style="color: rgb(0, 255, 42);"><b>Global Logistics</b></h1>
         <p>Explore our new features and find the best solutions for your business needs.</p>
       </div>
     </div>
-
-    <
-
-   
- 
-
-
     <div class="callout large">
       <div class="row column text-center">
         <h1>Founder, Foncord Group</h1>
@@ -236,10 +192,10 @@
       </div>
     </div>
     <hr>
-    <div class =row column">
+    <div class="row column">
       <h3>Foncord Group - Services and Industries</h3>
     </div>
-        <div class="row column">
+    <div class="row column">
       <ul class="vertical medium-horizontal xmenu expanded text-center reduced-font-menu">
         <li><a href="#"><div class="stat"></div><span>Petrochemicals & Lubricants</span></a></li>
         <li><a href="#"><div class="stat"></div><span>Mining Minerals and Metals</span></a></li>
