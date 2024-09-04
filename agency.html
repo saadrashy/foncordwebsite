@@ -7,134 +7,175 @@
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+      
       /* Tiny Menu Styles */
-      .tiny-menu {
-        font-size: 12px; /* Smaller font size for the entire menu */
-        text-align: center; /* Center align the text */
-      }
-      .tiny-menu .top-bar-center {
-        display: flex;
-        justify-content: center; /* Center the menu items horizontally */
-      }
-      .tiny-menu .menu {
-        display: flex; /* Display the menu items in a row */
-        padding: 0; /* Remove or reduce padding */
-        list-style: none; /* Remove default list styling */
-      }
-      .tiny-menu .menu li {
-        margin: 0 5px; /* Adjust margin between menu items */
-      }
-      .tiny-menu .menu a {
-        padding: 5px 10px; /* Adjust padding inside links */
-        text-decoration: none; /* Remove underline from links */
-        color: inherit; /* Inherit text color */
-        border: none; /* Remove any border */
-      }
-      .tiny-menu .menu-text {
-        font-size: 14px; /* Adjust the font size of the menu text if needed */
-        border: none; /* Remove any border */
-      }
-      /* Remove borders from all elements */
-      * {
-        border: none !important;
-      }
-      /* Remove border from images */
-      img {
-        border: none !important;
-        max-width: 100%; /* Ensure images are responsive */
-        height: auto;
-      }
-      /* Reduce font size for specific list */
-      .reduced-font-menu {
-        font-size: 15px; /* Adjust the font size as needed */
-        font-family: 'Titillium Web', sans-serif;
-      }
-      h1, h2, h3, h4, h5, h6 {
-        font-family: 'Titillium Web', sans-serif;
-      }
-      .xmenu a {
-        color: maroon;
-        padding: 10px 15px;
-        border-radius: 5px;
-        text-decoration: none;
-        display: inline-block;
-        transition: background-color 0.3s ease;
-      }
-      .xmenu a:hover {
-        background-color: darkred;
-      }
-      .xmenu a span {
-        font-family: 'Titillium Web', sans-serif;
-      }
-      .xmenu {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-      }
-      .background-row1, .background-row2, .background-row3, .background-row4 {
-        background-size: cover;      /* Ensures the image covers the entire row */
-        background-position: center; /* Centers the image */
-        background-repeat: no-repeat;/* Prevents the image from repeating */
-        width: 100%;
-        height: 30%; /* Match the container height */
-        padding: 50px 0;             /* Adds padding to the row for content spacing */
-        color: white;                /* Ensures the text is visible on dark backgrounds */
-      }
-      .background-row1 {
-        background-image: url('https://www.oracle.com/a/ocom/img/rh03-c-and-e-overview.jpg');
-      }
-      .background-row2 {
-        background-image: url('https://www.oracle.com/a/ocom/img/rh03v4full-oil-gas-hero.jpg');
-      }
-      .background-row3 {
-        background-image: url('https://www.oracle.com/a/ocom/img/rh03v4full-comm-hero.jpg');
-      }
-      .background-row4 {
-        background-image: url('./industries/logistics.jpg');
-      }
-      @media (max-width: 767px) {
-        .background-row1, .background-row2, .background-row3, .background-row4 {
-          height: auto; /* Allow height to adjust based on content */
-          padding: 20px 0; /* Adjust padding for smaller screens */
-        }
-        .tiny-menu .menu {
-          flex-direction: column; /* Stack menu items vertically */
-        }
-        .tiny-menu .menu li {
-          margin: 5px 0; /* Adjust margin between menu items */
-        }
-      }
+.tiny-menu {
+  font-size: 12px; /* Smaller font size for the entire menu */
+  text-align: center; /* Center align the text */
+}
+
+.tiny-menu .top-bar-center {
+  display: flex;
+  justify-content: center; /* Center the menu items horizontally */
+}
+
+.tiny-menu .menu {
+  display: flex; /* Display the menu items in a row */
+  padding: 0; /* Remove or reduce padding */
+  list-style: none; /* Remove default list styling */
+}
+
+.tiny-menu .menu li {
+  margin: 0 5px; /* Adjust margin between menu items */
+}
+
+.tiny-menu .menu a {
+  padding: 5px 10px; /* Adjust padding inside links */
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color */
+}
+
+.tiny-menu .menu-text {
+  font-size: 14px; /* Adjust the font size of the menu text if needed */
+}
+
+/* Custom Styles for Responsive Menu Behavior */
+.top-bar {
+  background-color: #f8f8f8; /* Default background color */
+}
+
+.top-bar .menu {
+  display: none; /* Hide the menu by default */
+}
+
+.top-bar.expanded .menu {
+  display: flex; /* Show the menu when expanded */
+}
+
+/* Remove borders from all elements */
+* {
+  border: none !important;
+}
+
+/* Remove border from images */
+img {
+  border: none !important;
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto;
+}
+
+/* Reduce font size for specific list */
+.reduced-font-menu {
+  font-size: 15px; /* Adjust the font size as needed */
+  font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.xmenu a {
+  color: maroon;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.xmenu a:hover {
+  background-color: darkred;
+}
+
+.xmenu a span {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.xmenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.background-row1, .background-row2, .background-row3, .background-row4 {
+  background-size: cover;      /* Ensures the image covers the entire row */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;/* Prevents the image from repeating */
+  width: 100%;
+  height: 30%; /* Match the container height */
+  padding: 50px 0;             /* Adds padding to the row for content spacing */
+  color: white;                /* Ensures the text is visible on dark backgrounds */
+}
+
+.background-row1 {
+  background-image: url('https://www.oracle.com/a/ocom/img/rh03-c-and-e-overview.jpg');
+}
+
+.background-row2 {
+  background-image: url('https://www.oracle.com/a/ocom/img/rh03v4full-oil-gas-hero.jpg');
+}
+
+.background-row3 {
+  background-image: url('https://www.oracle.com/a/ocom/img/rh03v4full-comm-hero.jpg');
+}
+
+.background-row4 {
+  background-image: url('./industries/logistics.jpg');
+}
+
+@media (max-width: 767px) {
+  .background-row1, .background-row2, .background-row3, .background-row4 {
+    height: auto; /* Allow height to adjust based on content */
+    padding: 20px 0; /* Adjust padding for smaller screens */
+  }
+  .tiny-menu .menu {
+    flex-direction: column; /* Stack menu items vertically */
+  }
+  .tiny-menu .menu li {
+    margin: 5px 0; /* Adjust margin between menu items */
+  }
+}
+
+
+
     </style>
   </head>
   <body>
+   
+
     <!-- Start Top Bar -->
-    <div class="top-bar tiny-menu">
-      <div class="top-bar-center">
-        <ul class="menu">
-          <li class="menu-text">Foncord Group</li>
-          <li><a href="#">Leadership</a></li>
-          <li><a href="#">Investor Relations</a></li>
-          <li><a href="#">History</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Companies</a></li>
-          <li><a href="#">Career</a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- End Top Bar -->
-    <!-- Start Regions Menu -->
-    <div class="top-bar tiny-menu" style="background-color: white;">
-      <div class="top-bar-center">
-        <ul class="menu" style="background-color: white;">
-          <li><a href="#">Middle East</a></li>
-          <li><a href="#">Canada</a></li>
-          <li><a href="#">Singapore</a></li>
-          <li><a href="#">Africa</a></li>
-          <li><a href="#">U.K</a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- End Regions Menu -->
+<div class="top-bar tiny-menu" data-responsive-menu="accordion medium-dropdown">
+  <div class="top-bar-center">
+    <ul class="menu">
+      <li class="menu-text">Foncord Group</li>
+      <li><a href="#">Leadership</a></li>
+      <li><a href="#">Investor Relations</a></li>
+      <li><a href="#">History</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Companies</a></li>
+      <li><a href="#">Career</a></li>
+    </ul>
+  </div>
+</div>
+<!-- End Top Bar -->
+
+<!-- Start Regions Menu -->
+<div class="top-bar tiny-menu" style="background-color: white;" data-responsive-menu="accordion medium-dropdown">
+  <div class="top-bar-center">
+    <ul class="menu" style="background-color: white;">
+      <li><a href="#">Middle East</a></li>
+      <li><a href="#">Canada</a></li>
+      <li><a href="#">Singapore</a></li>
+      <li><a href="#">Africa</a></li>
+      <li><a href="#">U.K</a></li>
+    </ul>
+  </div>
+</div>
+<!-- End Regions Menu -->
+
+
+
+
     <div class="grid-container background-row1 full-width">
       <div class="small-12 columns content-container">
         <h1><b>Construction</b></h1>
