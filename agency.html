@@ -125,11 +125,11 @@ h1, h2, h3, h4, h5, h6 {
 
 
   .accordion-menu a{
-color: maroon;
+color: color;
 }
 
 .accordion-menu a:hover {
-color:#800000;
+color:blueviolet;
 }
 
 
@@ -147,6 +147,25 @@ color:#800000;
   }
 }
 
+.hide-for-large
+{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index: 1000;
+  background-color:maroon;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 10px;
+}
+
+.accordion-menu {
+  margin: 0;
+}
+
+body {
+  padding-top: 60px;
+}
 /*
 
 @media (max-width: 767px) {
