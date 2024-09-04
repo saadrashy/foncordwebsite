@@ -121,10 +121,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 767px) {
- 
-  .tiny-menu .menu li {
-    margin: 5px 0; /* Adjust margin between menu items */
-  }
+
+  .tiny-menu .menu {
+          flex-direction: column; /* Stack menu items vertically */
+        }
+        .tiny-menu .menu li {
+          margin: 5px 0; /* Adjust margin between menu items */
+        }
+
 }
 
 
@@ -135,19 +139,22 @@ h1, h2, h3, h4, h5, h6 {
    
 
     <!-- Start Top Bar -->
-<div class="top-bar tiny-menu" data-responsive-menu="accordion medium-dropdown">
-  <div class="top-bar-center">
-    <ul class="menu">
-      <li class="menu-text">Foncord Group</li>
-      <li><a href="#">Leadership</a></li>
-      <li><a href="#">Investor Relations</a></li>
-      <li><a href="#">History</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Companies</a></li>
-      <li><a href="#">Career</a></li>
-    </ul>
-  </div>
-</div>
+    <div class="top-bar tiny-menu" id="main-menu" data-responsive-toggle="main-menu" data-hide-for="medium">
+      <div class="top-bar-title">
+        <span class="menu-icon" data-toggle="main-menu"></span>
+        <span class="menu-text">Foncord Group</span>
+      </div>
+      <div class="top-bar-center">
+        <ul class="menu">
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Companies</a></li>
+          <li><a href="#">Career</a></li>
+        </ul>
+      </div>
+    </div>
 <!-- End Top Bar -->
 
 <!-- Start Regions Menu -->
