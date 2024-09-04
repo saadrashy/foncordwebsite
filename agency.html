@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-@media (max-width: 767px) {
+@media  (max-width: 767px) {
   .top-bar .menu {
     display: block !important; /* Force display on small screens */
   }
@@ -157,6 +157,29 @@ h1, h2, h3, h4, h5, h6 {
    
 
     <!-- Start Top Bar -->
+
+
+    <div class = "hide-for-large">
+      <ul class ="vertical menu accordion-menu" data-accordion-menu>
+          <li> 
+            <a href="#"> Products</a>
+              <ul class ="menu vertical nested">
+                  <li><a href="#">Sub-item 1</a></li>
+                  <li><a href="#">Sub-tem 2</a></li>
+              </ul>
+          </li>
+
+          <li> 
+            <a href="#"> Products</a>
+              <ul class ="menu vertical nested">
+                  <li><a href="#">Sub-item 1</a></li>
+                  <li><a href="#">Sub-tem 2</a></li>
+              </ul>
+          </li>
+
+      </ul>
+    </div>
+
     <div class="top-bar tiny-menu" id="main-menu" data-responsive-toggle="main-menu" data-hide-for="medium">
 
       <div class="top-bar-title">
