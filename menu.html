@@ -51,10 +51,7 @@
 }
 
 
-
 .accordion-menu {
-
-
   background-color: rgb(71, 3, 3); /* Dark background */
   color: #fff; /* White text */
   padding: 20px; /* Add padding for better spacing */
@@ -66,7 +63,9 @@
   transform: translateX(100%); /* Initially off-screen */
   transition: transform 0.3s ease; /* Smooth sliding effect */
   z-index: 900; /* Ensure it appears below the hide-for-large class */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
 }
+
 
 .accordion-menu.show {
   transform: translateX(0); /* Slide in from the right */
