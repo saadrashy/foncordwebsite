@@ -26,7 +26,17 @@
         background-color: #333; /* Dark background */
         color: #fff; /* White text */
         padding: 10px;
-        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        right: -250px; /* Initially off-screen */
+        height: 100%;
+        width: 250px;
+        transition: transform 0.5s ease; /* Smooth sliding effect */
+        transform: translateX(100%); /* Hidden by default */
+      }
+
+      .accordion-menu.show {
+        transform: translateX(0); /* Slide in from the right */
       }
 
       .accordion-menu a {
@@ -72,31 +82,31 @@
     <div class="hide-for-large">
       <!-- Menu Button -->
       <a href="#"> <img class="menu-button" src="flogo.svg" alt="Logo" style="height: auto;"></a>
-      
-      <!-- Accordion Menu -->
-      <ul class="vertical menu accordion-menu" data-accordion-menu>
-        <li>
-          <a href="#">About Us</a>
-          <ul class="menu vertical nested">
-            <li><a href="#">Foncord Group - Leadership</a></li>
-            <li><a href="#">Foncord Group - History</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Investor Relations</a></li>
-        <li><a href="#">Companies</a></li>
-        <li><a href="#">Career</a></li>
-      </ul>
     </div>
-      
+    
+    <!-- Accordion Menu -->
+    <ul class="vertical menu accordion-menu" data-accordion-menu>
+      <li>
+        <a href="#">About Us</a>
+        <ul class="menu vertical nested">
+          <li><a href="#">Foncord Group - Leadership</a></li>
+          <li><a href="#">Foncord Group - History</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Investor Relations</a></li>
+      <li><a href="#">Companies</a></li>
+      <li><a href="#">Career</a></li>
+    </ul>
+
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>
       $(document).foundation();
       $(document).ready(function(){
-        // Toggle the accordion menu when the menu button is clicked
+        // Toggle the accordion menu sliding from the right
         $('.menu-button').on('click', function(e){
           e.preventDefault(); // Prevent default behavior of anchor
-          $('.accordion-menu').slideToggle('slow');
+          $('.accordion-menu').toggleClass('show'); // Add or remove 'show' class
         });
 
         // Optional: Toggle sub-menus
