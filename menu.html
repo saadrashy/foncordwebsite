@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-     .hide-for-large {
+.hide-for-large {
   position: fixed;
   top: 0;
   left: 0;
@@ -16,6 +16,8 @@
   background-color: maroon;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
+  /* Add padding-bottom to ensure there's space below for the menu */
+  padding-bottom: 60px;
 }
 
 .accordion-menu {
@@ -23,9 +25,9 @@
   color: #fff; /* White text */
   padding: 10px;
   position: fixed;
-  top: 0;
+  top: 60px; /* Adjust to appear right below the hide-for-large */
   right: 0; /* Align to the right edge of the viewport */
-  height: 100%; /* Full height */
+  height: calc(100% - 60px); /* Full height minus the space for the top menu */
   width: 100%; /* Full width */
   transform: translateX(100%); /* Initially off-screen */
   transition: transform 0.3s ease; /* Smooth sliding effect */
@@ -41,6 +43,11 @@
   padding: 10px;
   display: block;
 }
+
+.accordion-menu ul.menu {
+  margin-top: 0; /* Remove default margin */
+}
+
 
       /* Media query for screens up to 767px (common mobile sizes) */
       @media (max-width: 767px) {
