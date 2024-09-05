@@ -57,6 +57,22 @@
         }
       }
 
+
+      .top-bar-right {
+  display: none; /* Hidden by default */
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
+  text-align: center;
+  padding: 10px;
+}
+
+.top-bar-right a {
+  color: #fff; /* White links */
+  padding: 10px;
+  display: block;
+}
+
+
     </style>
 
   </head>
@@ -64,29 +80,54 @@
   <body>
 
     <div class="hide-for-large">
-      <ul class="vertical menu accordion-menu" data-accordion-menu>
-        <li>
-          <a href="#">
-            <img src="flogo.svg" alt="Logo" style="height: auto;">
-          </a>
-          <ul class="menu vertical nested"> 
-            <li><a href="#">About Us</a></li>
-            <ul class="menu vertical nested">
+        <!-- This is the button to toggle the mobile menu -->
+        <button class="menu-button">Menu</button>
+      
+        <ul class="vertical menu accordion-menu" data-accordion-menu>
+          <li>
+            <a href="#">
+              <img src="flogo.svg" alt="Logo" style="height: auto;">
+            </a>
+            <ul class="menu vertical nested"> 
+              <li><a href="#">About Us</a></li>
+              <ul class="menu vertical nested">
                 <li><a href="#">Foncord Group - Leadership</a></li>
                 <li><a href="#">Foncord Group - History</a></li>
               </ul>
-            <li><a href="#">Investor Relations</a></li>    
-            <li><a href="#">Companies</a></li>
-            <li><a href="#">Career</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Companies</a></li>
+              <li><a href="#">Career</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>
       $(document).foundation();
+      $(document).ready(function(){
+  // Initially hide the accordion menu
+  $('.accordion-menu').hide();
+
+  // Toggle the accordion menu when the menu button is clicked
+  $('.menu-button').on('click', function(){
+    $('.accordion-menu').slideToggle('slow');
+  });
+
+  // Optional: Close the nested sub-menus when clicking on parent links
+  $('.accordion-menu li > a').on('click', function(e){
+    // If the clicked item has a nested menu, prevent default link behavior and toggle sub-menu
+    var submenu = $(this).next('ul');
+    if (submenu.length) {
+      e.preventDefault(); // Prevent the link from navigating
+      submenu.slideToggle('slow');
+    }
+  });
+});
+
+
+
     </script>
   </body>
 </html>
