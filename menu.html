@@ -8,61 +8,83 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
 
+      .hide-for-large {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: maroon;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+      }
 
+      .accordion-menu {
+        margin: 0;
+      }
 
-.hide-for-large
-{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index: 1000;
-  background-color:maroon;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  padding: 10px;
-}
+      body {
+        padding-top: 60px;
+      }
 
-.accordion-menu {
-  margin: 0;
-}
+      /* Media query for screens up to 767px (common mobile sizes) */
+      @media (max-width: 767px) {
+        .hide-for-large {
+          background-color: maroon;
+        }
 
-body {
-  padding-top: 60px;
-}
+        .hide-for-large img {
+          max-width: 80px;
+        }
 
+        .hide-for-large a {
+          color: white; /* White text for mobile */
+        }
+      }
 
-</style>
+      /* Media query specifically for iPads (768px to 1024px) */
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .hide-for-large {
+          background-color: maroon; /* Keep background maroon */
+        }
 
-<body>
+        .hide-for-large img {
+          max-width: 100px; /* Change logo size to 100px */
+        }
 
+        .hide-for-large a {
+          color: white; /* Text color set to white */
+        }
+      }
 
-<div class = "hide-for-large">
-   
-      
-   <ul class ="vertical menu accordion-menu" data-accordion-menu>
-       <li> 
-         <a href="#">  <img src="flogo.svg" alt="Logo" style="max-width: 80px; height: auto;"> </a>
-           <ul class ="menu vertical nested">
-               <li><a href="#">Leadership</a></li>
-               <li><a href="#">Investor Relations</a></li>
-               <li><a href="#">History</a></li>
-               <li><a href="#">Contact</a></li>
-               <li><a href="#">Companies</a></li>
-               <li><a href="#">Career</a></li>
-           </ul>
-       </li>
+    </style>
 
-     </ul>
- </div>
+  </head>
 
+  <body>
 
- <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <div class="hide-for-large">
+      <ul class="vertical menu accordion-menu" data-accordion-menu>
+        <li>
+          <a href="#">
+            <img src="flogo.svg" alt="Logo" style="height: auto;">
+          </a>
+          <ul class="menu vertical nested">
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Investor Relations</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Companies</a></li>
+            <li><a href="#">Career</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>
       $(document).foundation();
-
     </script>
   </body>
 </html>
-
-
