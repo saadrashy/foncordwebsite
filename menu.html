@@ -23,21 +23,22 @@
       }
 
       .accordion-menu {
-        background-color: #333; /* Dark background */
-        color: #fff; /* White text */
-        padding: 10px;
-        position: fixed;
-        top: 0;
-        right: -250px; /* Initially off-screen */
-        height: 100%;
-        width: 250px;
-        transition: transform 0.5s ease; /* Smooth sliding effect */
-        transform: translateX(100%); /* Hidden by default */
-      }
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  right: 0; /* Align to the right edge of the viewport */
+  height: 100%;
+  width: 250px;
+  transform: translateX(100%); /* Initially off-screen */
+  transition: transform 0.3s ease; /* Smooth sliding effect */
+}
 
-      .accordion-menu.show {
-        transform: translateX(0); /* Slide in from the right */
-      }
+.accordion-menu.show {
+  transform: translateX(0); /* Slide in from the right */
+}
+
 
       .accordion-menu a {
         color: #fff;
@@ -103,21 +104,22 @@
     <script>
       $(document).foundation();
       $(document).ready(function(){
-        // Toggle the accordion menu sliding from the right
-        $('.menu-button').on('click', function(e){
-          e.preventDefault(); // Prevent default behavior of anchor
-          $('.accordion-menu').toggleClass('show'); // Add or remove 'show' class
-        });
+  // Toggle the accordion menu sliding from the right
+  $('.menu-button').on('click', function(e){
+    e.preventDefault(); // Prevent default behavior of anchor
+    $('.accordion-menu').toggleClass('show'); // Add or remove 'show' class
+  });
 
-        // Optional: Toggle sub-menus
-        $('.accordion-menu li > a').on('click', function(e){
-          var submenu = $(this).next('ul');
-          if (submenu.length) {
-            e.preventDefault(); // Prevent the link from navigating
-            submenu.slideToggle('slow'); // Toggle the sub-menu
-          }
-        });
-      });
+  // Optional: Toggle sub-menus
+  $('.accordion-menu li > a').on('click', function(e){
+    var submenu = $(this).next('ul');
+    if (submenu.length) {
+      e.preventDefault(); // Prevent the link from navigating
+      submenu.slideToggle('slow'); // Toggle the sub-menu
+    }
+  });
+});
+
     </script>
   </body>
 </html>
