@@ -19,7 +19,39 @@
   background-color: maroon;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
+  display: flex;
+  justify-content: space-between; /* Distribute space between items */
+  align-items: center; /* Center items vertically */
 }
+
+.hide-for-large img {
+  height: auto; /* Ensure the logo scales properly */
+}
+
+.menu-button, .close-button {
+  font-size: 24px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+}
+
+.menu-button i, .close-button i {
+  vertical-align: middle; /* Align icon vertically */
+}
+
+.menu-button:hover, .close-button:hover {
+  background-color: rgb(240, 30, 30); /* Hover effect */
+  color: #fff;
+}
+
+/* Initially hide the close button */
+.close-button {
+  display: none;
+}
+
 
 .accordion-menu {
 
@@ -106,28 +138,6 @@
 
 
 
-
-.menu-button, .close-button {
-  font-size: 24px;
-  color: white;
-  padding: 10px;
-  display: inline-block;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  text-decoration: none;
-  text-align: right;
-}
-
-.menu-button i, .close-button i {
-  vertical-align: middle; /* Align icon vertically */
-  text-align: right;
-}
-
-.menu-button:hover, .close-button:hover {
-  background-color: rgb(240, 30, 30); /* Hover effect */
-  color: #fff;
-}
 
 
 
