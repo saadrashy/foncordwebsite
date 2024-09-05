@@ -18,12 +18,21 @@
         padding: 10px;
       }
 
-      .accordion-menu {
-        margin: 0;
-      }
-
       body {
         padding-top: 60px;
+      }
+
+      .accordion-menu {
+        background-color: #333; /* Dark background */
+        color: #fff; /* White text */
+        padding: 10px;
+        display: none; /* Hidden by default */
+      }
+
+      .accordion-menu a {
+        color: #fff;
+        padding: 10px;
+        display: block;
       }
 
       /* Media query for screens up to 767px (common mobile sizes) */
@@ -55,41 +64,27 @@
           color: white; /* Text color set to white */
         }
       }
-
-      .accordion-menu {
-        display: none; /* Hidden by default */
-        background-color: #333; /* Dark background */
-        color: #fff; /* White text */
-        padding: 10px;
-      }
-
-      .accordion-menu a {
-        color: #fff; /* White links */
-        padding: 10px;
-        display: block;
-      }
     </style>
   </head>
 
   <body>
 
     <div class="hide-for-large">
-      <!-- This is the button to toggle the mobile menu -->
+      <!-- Menu Button -->
       <a href="#"> <img class="menu-button" src="flogo.svg" alt="Logo" style="height: auto;"></a>
-            
+      
+      <!-- Accordion Menu -->
       <ul class="vertical menu accordion-menu" data-accordion-menu>
         <li>
-          <ul class="menu vertical nested"> 
-            <li><a href="#">About Us</a></li>
-            <ul class="menu vertical nested">
-              <li><a href="#">Foncord Group - Leadership</a></li>
-              <li><a href="#">Foncord Group - History</a></li>
-            </ul>
-            <li><a href="#">Investor Relations</a></li>
-            <li><a href="#">Companies</a></li>
-            <li><a href="#">Career</a></li>
+          <a href="#">About Us</a>
+          <ul class="menu vertical nested">
+            <li><a href="#">Foncord Group - Leadership</a></li>
+            <li><a href="#">Foncord Group - History</a></li>
           </ul>
         </li>
+        <li><a href="#">Investor Relations</a></li>
+        <li><a href="#">Companies</a></li>
+        <li><a href="#">Career</a></li>
       </ul>
     </div>
       
@@ -104,13 +99,12 @@
           $('.accordion-menu').slideToggle('slow');
         });
 
-        // Optional: Close the nested sub-menus when clicking on parent links
+        // Optional: Toggle sub-menus
         $('.accordion-menu li > a').on('click', function(e){
-          // If the clicked item has a nested menu, prevent default link behavior and toggle sub-menu
           var submenu = $(this).next('ul');
           if (submenu.length) {
             e.preventDefault(); // Prevent the link from navigating
-            submenu.slideToggle('slow');
+            submenu.slideToggle('slow'); // Toggle the sub-menu
           }
         });
       });
