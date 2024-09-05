@@ -197,12 +197,13 @@
     $('.accordion-menu').toggleClass('show'); // Add or remove 'show' class
   });
 
-  // Close the menu when the X button is clicked
-  $('.close-button').on('click', function(e){
+ // Close the menu when the X button is clicked
+ $('.close-button').on('click', function(e){
     e.preventDefault(); // Prevent default behavior of anchor
     $('.accordion-menu').removeClass('show'); // Remove 'show' class to hide menu
+    $(this).hide(); // Hide the close button
+    $('.menu-button').show(); // Show the menu button
   });
-
   // Optional: Toggle sub-menus
   $('.accordion-menu li > a').on('click', function(e){
     var submenu = $(this).next('ul');
